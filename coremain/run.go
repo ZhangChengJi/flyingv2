@@ -1,6 +1,7 @@
 package coremain
 
 import (
+	"flyingv2/core/etcd"
 	plugin "flyingv2/core/gin/plugin"
 	"flyingv2/logs"
 	"fmt"
@@ -12,6 +13,8 @@ import (
 
 func init() {
 	logs.NewLog()
+	etcd.Run()
+
 }
 
 func Run() {
