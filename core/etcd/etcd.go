@@ -27,7 +27,7 @@ func NewEtcdClient() *clientv3.Client {
 	flag.StringVar(&endpoints, "ETCD_ENDPOINT", "", "etcd 连接")
 	flag.Parse()
 	if endpoints == "" {
-		logs.L.Warn("Use default etcd connection")
+		logs.L.Warn("Use default etcd connection: " + defaultEndpoints)
 		endpoints = defaultEndpoints
 	}
 

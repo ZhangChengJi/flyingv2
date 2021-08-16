@@ -8,8 +8,9 @@ import (
 	"time"
 )
 
-type Stroe struct {
-	Client *clientv3.Client
+type Store struct {
+	Client     *clientv3.Client
+	pathPrefix string
 }
 
 const (
@@ -20,7 +21,7 @@ const (
 
 var errKeyNotFound = errors.New("key not found")
 
-func (e *Stroe) Get(ctx context.Context, path string, recursive bool) (*clientv3.GetResponse, error) {
+func (e *Store) Get(ctx context.Context, path string, recursive bool) (*clientv3.GetResponse, error) {
 	ctx, cancel := context.WithTimeout(ctx, etcdTimeout)
 	defer cancel()
 	if recursive {

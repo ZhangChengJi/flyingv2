@@ -13,7 +13,6 @@ import (
 
 func init() {
 	logs.NewLog()
-	etcd.Run()
 
 }
 
