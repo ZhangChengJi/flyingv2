@@ -1,7 +1,6 @@
 package etcd
 
 import (
-	"flag"
 	"flyingv2/logs"
 	clientv3 "go.etcd.io/etcd/client/v3"
 	"go.uber.org/zap"
@@ -10,7 +9,7 @@ import (
 )
 
 const (
-	defaultEndpoints = "http://localhost:2379"
+	defaultEndpoints = "http://192.168.1.227:2379"
 	// The short keepalive timeout and interval have been chosen to aggressively
 	// detect a failed etcd server without introducing much overhead.
 	keepaliveTime    = 30 * time.Second
@@ -22,10 +21,10 @@ const (
 	dialTimeout = 20 * time.Second
 )
 
-func NewEtcdClient() *clientv3.Client {
+func NewEtcdClient() (*clientv3.Client, error) {
 	var endpoints string
-	flag.StringVar(&endpoints, "ETCD_ENDPOINT", "", "etcd 连接")
-	flag.Parse()
+	//flag.StringVar(&endpoints, "ETCD_ENDPOINT", "", "etcd 连接")
+	//flag.Parse()
 	if endpoints == "" {
 		logs.L.Warn("Use default etcd connection: " + defaultEndpoints)
 		endpoints = defaultEndpoints
@@ -43,7 +42,6 @@ func NewEtcdClient() *clientv3.Client {
 	e, err := clientv3.New(cfg)
 	if err != nil {
 		logs.L.Error("etcd create connection failed:", zap.Error(err))
-		return nil
 	}
-	return e
+	return e, err
 }

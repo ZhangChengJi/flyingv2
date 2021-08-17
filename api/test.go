@@ -1,7 +1,7 @@
 package api
 
 import (
-	"context"
+	app2 "flyingv2/core/app"
 	"flyingv2/core/etcd"
 	"fmt"
 	"github.com/gin-gonic/gin"
@@ -13,7 +13,9 @@ type Tsest struct {
 
 func (t *Tsest) Test(c *gin.Context) {
 
-	re, _ := aa.Get(context.Background(), "", false)
-	fmt.Println(re)
-	c.String(http.StatusOK, "")
+	app := &app2.App{I: etcd.Storage}
+	list := app.GetList()
+
+	fmt.Println(list)
+	c.String(http.StatusOK, list)
 }

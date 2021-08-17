@@ -1,0 +1,198 @@
+[flying]2021/08/17 - 10:02:09.478	[34minfo[0m	/Users/zhangchengji/GoProjects/flyingv2/core/gin/plugin/router.go:13	use middleware cors
+[flying]2021/08/17 - 10:02:09.479	[34minfo[0m	/Users/zhangchengji/GoProjects/flyingv2/core/gin/plugin/router.go:15	register swagger handler
+[flying]2021/08/17 - 10:02:09.480	[34minfo[0m	/Users/zhangchengji/GoProjects/flyingv2/core/gin/plugin/router.go:22	router register success
+[flying]2021/08/17 - 10:02:09.480	[34minfo[0m	/Users/zhangchengji/GoProjects/flyingv2/coremain/run.go:33	server run success on 	{"address": ":8080"}
+[flying]2021/08/17 - 10:02:19.552	[33mwarn[0m	/Users/zhangchengji/GoProjects/flyingv2/core/etcd/etcd.go:30	Use default etcd connection: http://192.168.1.227:2379
+[flying]2021/08/17 - 10:15:45.605	[31merror[0m	/Users/zhangchengji/GoProjects/flyingv2/coremain/run.go:34	accept tcp [::]:8080: use of closed network connection
+[flying]2021/08/17 - 10:15:49.389	[34minfo[0m	/Users/zhangchengji/GoProjects/flyingv2/core/gin/plugin/router.go:13	use middleware cors
+[flying]2021/08/17 - 10:15:49.390	[34minfo[0m	/Users/zhangchengji/GoProjects/flyingv2/core/gin/plugin/router.go:15	register swagger handler
+[flying]2021/08/17 - 10:15:49.390	[34minfo[0m	/Users/zhangchengji/GoProjects/flyingv2/core/gin/plugin/router.go:22	router register success
+[flying]2021/08/17 - 10:15:49.390	[34minfo[0m	/Users/zhangchengji/GoProjects/flyingv2/coremain/run.go:33	server run success on 	{"address": ":8080"}
+[flying]2021/08/17 - 10:15:58.814	[33mwarn[0m	/Users/zhangchengji/GoProjects/flyingv2/core/etcd/etcd.go:30	Use default etcd connection: http://192.168.1.227:2379
+[flying]2021/08/17 - 10:16:23.493	[31merror[0m	/Users/zhangchengji/GoProjects/flyingv2/coremain/run.go:34	accept tcp [::]:8080: use of closed network connection
+[flying]2021/08/17 - 10:16:26.929	[34minfo[0m	/Users/zhangchengji/GoProjects/flyingv2/core/gin/plugin/router.go:13	use middleware cors
+[flying]2021/08/17 - 10:16:26.930	[34minfo[0m	/Users/zhangchengji/GoProjects/flyingv2/core/gin/plugin/router.go:15	register swagger handler
+[flying]2021/08/17 - 10:16:26.931	[34minfo[0m	/Users/zhangchengji/GoProjects/flyingv2/core/gin/plugin/router.go:22	router register success
+[flying]2021/08/17 - 10:16:26.931	[34minfo[0m	/Users/zhangchengji/GoProjects/flyingv2/coremain/run.go:33	server run success on 	{"address": ":8080"}
+[flying]2021/08/17 - 10:16:29.698	[33mwarn[0m	/Users/zhangchengji/GoProjects/flyingv2/core/etcd/etcd.go:30	Use default etcd connection: http://192.168.1.227:2379
+[flying]2021/08/17 - 10:18:47.178	[31merror[0m	/Users/zhangchengji/GoProjects/flyingv2/coremain/run.go:34	accept tcp [::]:8080: use of closed network connection
+[flying]2021/08/17 - 10:18:51.339	[34minfo[0m	/Users/zhangchengji/GoProjects/flyingv2/core/gin/plugin/router.go:13	use middleware cors
+[flying]2021/08/17 - 10:18:51.340	[34minfo[0m	/Users/zhangchengji/GoProjects/flyingv2/core/gin/plugin/router.go:15	register swagger handler
+[flying]2021/08/17 - 10:18:51.340	[34minfo[0m	/Users/zhangchengji/GoProjects/flyingv2/core/gin/plugin/router.go:22	router register success
+[flying]2021/08/17 - 10:18:51.340	[34minfo[0m	/Users/zhangchengji/GoProjects/flyingv2/coremain/run.go:33	server run success on 	{"address": ":8080"}
+[flying]2021/08/17 - 10:18:52.722	[33mwarn[0m	/Users/zhangchengji/GoProjects/flyingv2/core/etcd/etcd.go:30	Use default etcd connection: http://192.168.1.227:2379
+[flying]2021/08/17 - 10:19:05.556	[31merror[0m	/Users/zhangchengji/GoProjects/flyingv2/coremain/run.go:34	accept tcp [::]:8080: use of closed network connection
+[flying]2021/08/17 - 10:19:07.594	[34minfo[0m	/Users/zhangchengji/GoProjects/flyingv2/core/gin/plugin/router.go:13	use middleware cors
+[flying]2021/08/17 - 10:19:07.595	[34minfo[0m	/Users/zhangchengji/GoProjects/flyingv2/core/gin/plugin/router.go:15	register swagger handler
+[flying]2021/08/17 - 10:19:07.595	[34minfo[0m	/Users/zhangchengji/GoProjects/flyingv2/core/gin/plugin/router.go:22	router register success
+[flying]2021/08/17 - 10:19:07.595	[34minfo[0m	/Users/zhangchengji/GoProjects/flyingv2/coremain/run.go:33	server run success on 	{"address": ":8080"}
+[flying]2021/08/17 - 10:19:09.998	[33mwarn[0m	/Users/zhangchengji/GoProjects/flyingv2/core/etcd/etcd.go:30	Use default etcd connection: http://192.168.1.227:2379
+[flying]2021/08/17 - 10:25:03.163	[31merror[0m	/Users/zhangchengji/GoProjects/flyingv2/coremain/run.go:34	accept tcp [::]:8080: use of closed network connection
+[flying]2021/08/17 - 10:25:21.985	[34minfo[0m	/Users/zhangchengji/GoProjects/flyingv2/core/gin/plugin/router.go:13	use middleware cors
+[flying]2021/08/17 - 10:25:21.987	[34minfo[0m	/Users/zhangchengji/GoProjects/flyingv2/core/gin/plugin/router.go:15	register swagger handler
+[flying]2021/08/17 - 10:25:21.987	[34minfo[0m	/Users/zhangchengji/GoProjects/flyingv2/core/gin/plugin/router.go:22	router register success
+[flying]2021/08/17 - 10:25:21.987	[34minfo[0m	/Users/zhangchengji/GoProjects/flyingv2/coremain/run.go:33	server run success on 	{"address": ":8080"}
+[flying]2021/08/17 - 10:25:23.890	[33mwarn[0m	/Users/zhangchengji/GoProjects/flyingv2/core/etcd/etcd.go:30	Use default etcd connection: http://192.168.1.227:2379
+[flying]2021/08/17 - 10:26:34.342	[31merror[0m	/Users/zhangchengji/GoProjects/flyingv2/coremain/run.go:34	accept tcp [::]:8080: use of closed network connection
+[flying]2021/08/17 - 10:26:38.027	[34minfo[0m	/Users/zhangchengji/GoProjects/flyingv2/core/gin/plugin/router.go:13	use middleware cors
+[flying]2021/08/17 - 10:26:38.027	[34minfo[0m	/Users/zhangchengji/GoProjects/flyingv2/core/gin/plugin/router.go:15	register swagger handler
+[flying]2021/08/17 - 10:26:38.027	[34minfo[0m	/Users/zhangchengji/GoProjects/flyingv2/core/gin/plugin/router.go:22	router register success
+[flying]2021/08/17 - 10:26:38.028	[34minfo[0m	/Users/zhangchengji/GoProjects/flyingv2/coremain/run.go:33	server run success on 	{"address": ":8080"}
+[flying]2021/08/17 - 10:26:49.399	[33mwarn[0m	/Users/zhangchengji/GoProjects/flyingv2/core/etcd/etcd.go:30	Use default etcd connection: http://192.168.1.227:2379
+[flying]2021/08/17 - 10:28:05.465	[31merror[0m	/Users/zhangchengji/GoProjects/flyingv2/coremain/run.go:34	accept tcp [::]:8080: use of closed network connection
+[flying]2021/08/17 - 10:34:33.693	[34minfo[0m	/Users/zhangchengji/GoProjects/flyingv2/core/gin/plugin/router.go:13	use middleware cors
+[flying]2021/08/17 - 10:34:33.695	[34minfo[0m	/Users/zhangchengji/GoProjects/flyingv2/core/gin/plugin/router.go:15	register swagger handler
+[flying]2021/08/17 - 10:34:33.695	[34minfo[0m	/Users/zhangchengji/GoProjects/flyingv2/core/gin/plugin/router.go:22	router register success
+[flying]2021/08/17 - 10:34:33.695	[34minfo[0m	/Users/zhangchengji/GoProjects/flyingv2/coremain/run.go:32	server run success on 	{"address": ":8080"}
+[flying]2021/08/17 - 10:34:49.930	[31merror[0m	/Users/zhangchengji/GoProjects/flyingv2/coremain/run.go:33	accept tcp [::]:8080: use of closed network connection
+[flying]2021/08/17 - 10:36:36.378	[33mwarn[0m	/Users/zhangchengji/GoProjects/flyingv2/core/etcd/etcd.go:30	Use default etcd connection: http://192.168.1.227:2379
+[flying]2021/08/17 - 10:36:36.389	[34minfo[0m	/Users/zhangchengji/GoProjects/flyingv2/core/gin/plugin/router.go:13	use middleware cors
+[flying]2021/08/17 - 10:36:36.390	[34minfo[0m	/Users/zhangchengji/GoProjects/flyingv2/core/gin/plugin/router.go:15	register swagger handler
+[flying]2021/08/17 - 10:36:36.390	[34minfo[0m	/Users/zhangchengji/GoProjects/flyingv2/core/gin/plugin/router.go:22	router register success
+[flying]2021/08/17 - 10:36:36.390	[34minfo[0m	/Users/zhangchengji/GoProjects/flyingv2/coremain/run.go:34	server run success on 	{"address": ":8080"}
+[flying]2021/08/17 - 13:45:17.624	[31merror[0m	/Users/zhangchengji/GoProjects/flyingv2/coremain/run.go:35	accept tcp [::]:8080: use of closed network connection
+[flying]2021/08/17 - 13:46:15.046	[34minfo[0m	/Users/zhangchengji/GoProjects/flyingv2/core/gin/plugin/router.go:13	use middleware cors
+[flying]2021/08/17 - 13:46:15.047	[34minfo[0m	/Users/zhangchengji/GoProjects/flyingv2/core/gin/plugin/router.go:15	register swagger handler
+[flying]2021/08/17 - 13:46:15.047	[34minfo[0m	/Users/zhangchengji/GoProjects/flyingv2/core/gin/plugin/router.go:22	router register success
+[flying]2021/08/17 - 13:46:15.047	[34minfo[0m	/Users/zhangchengji/GoProjects/flyingv2/coremain/run.go:32	server run success on 	{"address": ":8080"}
+[flying]2021/08/17 - 13:46:19.578	[33mwarn[0m	/Users/zhangchengji/GoProjects/flyingv2/core/etcd/etcd.go:30	Use default etcd connection: http://192.168.1.227:2379
+[flying]2021/08/17 - 13:48:02.630	[31merror[0m	/Users/zhangchengji/GoProjects/flyingv2/coremain/run.go:33	accept tcp [::]:8080: use of closed network connection
+[flying]2021/08/17 - 13:48:06.794	[34minfo[0m	/Users/zhangchengji/GoProjects/flyingv2/core/gin/plugin/router.go:13	use middleware cors
+[flying]2021/08/17 - 13:48:06.795	[34minfo[0m	/Users/zhangchengji/GoProjects/flyingv2/core/gin/plugin/router.go:15	register swagger handler
+[flying]2021/08/17 - 13:48:06.795	[34minfo[0m	/Users/zhangchengji/GoProjects/flyingv2/core/gin/plugin/router.go:22	router register success
+[flying]2021/08/17 - 13:48:06.795	[34minfo[0m	/Users/zhangchengji/GoProjects/flyingv2/coremain/run.go:32	server run success on 	{"address": ":8080"}
+[flying]2021/08/17 - 13:48:07.851	[33mwarn[0m	/Users/zhangchengji/GoProjects/flyingv2/core/etcd/etcd.go:29	Use default etcd connection: http://192.168.1.227:2379
+[flying]2021/08/17 - 13:48:10.404	[33mwarn[0m	/Users/zhangchengji/GoProjects/flyingv2/core/etcd/etcd.go:29	Use default etcd connection: http://192.168.1.227:2379
+[flying]2021/08/17 - 13:48:11.622	[33mwarn[0m	/Users/zhangchengji/GoProjects/flyingv2/core/etcd/etcd.go:29	Use default etcd connection: http://192.168.1.227:2379
+[flying]2021/08/17 - 13:48:12.503	[33mwarn[0m	/Users/zhangchengji/GoProjects/flyingv2/core/etcd/etcd.go:29	Use default etcd connection: http://192.168.1.227:2379
+[flying]2021/08/17 - 13:48:13.461	[33mwarn[0m	/Users/zhangchengji/GoProjects/flyingv2/core/etcd/etcd.go:29	Use default etcd connection: http://192.168.1.227:2379
+[flying]2021/08/17 - 13:48:14.811	[33mwarn[0m	/Users/zhangchengji/GoProjects/flyingv2/core/etcd/etcd.go:29	Use default etcd connection: http://192.168.1.227:2379
+[flying]2021/08/17 - 13:48:15.818	[33mwarn[0m	/Users/zhangchengji/GoProjects/flyingv2/core/etcd/etcd.go:29	Use default etcd connection: http://192.168.1.227:2379
+[flying]2021/08/17 - 13:48:17.239	[33mwarn[0m	/Users/zhangchengji/GoProjects/flyingv2/core/etcd/etcd.go:29	Use default etcd connection: http://192.168.1.227:2379
+[flying]2021/08/17 - 13:49:47.307	[33mwarn[0m	/Users/zhangchengji/GoProjects/flyingv2/core/etcd/etcd.go:29	Use default etcd connection: http://192.168.1.227:2379
+[flying]2021/08/17 - 13:49:49.128	[33mwarn[0m	/Users/zhangchengji/GoProjects/flyingv2/core/etcd/etcd.go:29	Use default etcd connection: http://192.168.1.227:2379
+[flying]2021/08/17 - 15:04:51.286	[31merror[0m	/Users/zhangchengji/GoProjects/flyingv2/coremain/run.go:33	accept tcp [::]:8080: use of closed network connection
+[flying]2021/08/17 - 15:04:54.834	[34minfo[0m	/Users/zhangchengji/GoProjects/flyingv2/core/gin/plugin/router.go:13	use middleware cors
+[flying]2021/08/17 - 15:04:54.835	[34minfo[0m	/Users/zhangchengji/GoProjects/flyingv2/core/gin/plugin/router.go:15	register swagger handler
+[flying]2021/08/17 - 15:04:54.835	[34minfo[0m	/Users/zhangchengji/GoProjects/flyingv2/core/gin/plugin/router.go:22	router register success
+[flying]2021/08/17 - 15:04:54.836	[34minfo[0m	/Users/zhangchengji/GoProjects/flyingv2/coremain/run.go:32	server run success on 	{"address": ":8080"}
+[flying]2021/08/17 - 15:05:27.601	[31merror[0m	/Users/zhangchengji/GoProjects/flyingv2/coremain/run.go:33	accept tcp [::]:8080: use of closed network connection
+[flying]2021/08/17 - 15:05:34.806	[34minfo[0m	/Users/zhangchengji/GoProjects/flyingv2/core/gin/plugin/router.go:13	use middleware cors
+[flying]2021/08/17 - 15:05:34.807	[34minfo[0m	/Users/zhangchengji/GoProjects/flyingv2/core/gin/plugin/router.go:15	register swagger handler
+[flying]2021/08/17 - 15:05:34.807	[34minfo[0m	/Users/zhangchengji/GoProjects/flyingv2/core/gin/plugin/router.go:22	router register success
+[flying]2021/08/17 - 15:05:34.807	[34minfo[0m	/Users/zhangchengji/GoProjects/flyingv2/coremain/run.go:32	server run success on 	{"address": ":8080"}
+[flying]2021/08/17 - 15:05:36.951	[33mwarn[0m	/Users/zhangchengji/GoProjects/flyingv2/core/etcd/etcd.go:29	Use default etcd connection: http://192.168.1.227:2379
+[flying]2021/08/17 - 15:05:38.466	[33mwarn[0m	/Users/zhangchengji/GoProjects/flyingv2/core/etcd/etcd.go:29	Use default etcd connection: http://192.168.1.227:2379
+[flying]2021/08/17 - 15:05:45.797	[31merror[0m	/Users/zhangchengji/GoProjects/flyingv2/coremain/run.go:33	accept tcp [::]:8080: use of closed network connection
+[flying]2021/08/17 - 15:06:04.493	[34minfo[0m	/Users/zhangchengji/GoProjects/flyingv2/core/gin/plugin/router.go:13	use middleware cors
+[flying]2021/08/17 - 15:06:04.494	[34minfo[0m	/Users/zhangchengji/GoProjects/flyingv2/core/gin/plugin/router.go:15	register swagger handler
+[flying]2021/08/17 - 15:06:04.494	[34minfo[0m	/Users/zhangchengji/GoProjects/flyingv2/core/gin/plugin/router.go:22	router register success
+[flying]2021/08/17 - 15:06:04.494	[34minfo[0m	/Users/zhangchengji/GoProjects/flyingv2/coremain/run.go:32	server run success on 	{"address": ":8080"}
+[flying]2021/08/17 - 15:09:03.399	[34minfo[0m	/Users/zhangchengji/GoProjects/flyingv2/core/gin/plugin/router.go:13	use middleware cors
+[flying]2021/08/17 - 15:09:03.400	[34minfo[0m	/Users/zhangchengji/GoProjects/flyingv2/core/gin/plugin/router.go:15	register swagger handler
+[flying]2021/08/17 - 15:09:03.400	[34minfo[0m	/Users/zhangchengji/GoProjects/flyingv2/core/gin/plugin/router.go:22	router register success
+[flying]2021/08/17 - 15:09:03.400	[34minfo[0m	/Users/zhangchengji/GoProjects/flyingv2/coremain/run.go:32	server run success on 	{"address": ":8080"}
+[flying]2021/08/17 - 15:09:06.531	[33mwarn[0m	/Users/zhangchengji/GoProjects/flyingv2/core/etcd/etcd.go:29	Use default etcd connection: http://192.168.1.227:2379
+[flying]2021/08/17 - 15:09:34.206	[33mwarn[0m	/Users/zhangchengji/GoProjects/flyingv2/core/etcd/etcd.go:29	Use default etcd connection: http://192.168.1.227:2379
+[flying]2021/08/17 - 15:09:38.198	[33mwarn[0m	/Users/zhangchengji/GoProjects/flyingv2/core/etcd/etcd.go:29	Use default etcd connection: http://192.168.1.227:2379
+[flying]2021/08/17 - 15:09:44.270	[34minfo[0m	/Users/zhangchengji/GoProjects/flyingv2/core/gin/plugin/router.go:13	use middleware cors
+[flying]2021/08/17 - 15:09:44.271	[34minfo[0m	/Users/zhangchengji/GoProjects/flyingv2/core/gin/plugin/router.go:15	register swagger handler
+[flying]2021/08/17 - 15:09:44.271	[34minfo[0m	/Users/zhangchengji/GoProjects/flyingv2/core/gin/plugin/router.go:22	router register success
+[flying]2021/08/17 - 15:09:44.271	[34minfo[0m	/Users/zhangchengji/GoProjects/flyingv2/coremain/run.go:32	server run success on 	{"address": ":8080"}
+[flying]2021/08/17 - 15:09:46.790	[33mwarn[0m	/Users/zhangchengji/GoProjects/flyingv2/core/etcd/etcd.go:29	Use default etcd connection: http://192.168.1.227:2379
+[flying]2021/08/17 - 15:10:32.984	[33mwarn[0m	/Users/zhangchengji/GoProjects/flyingv2/core/etcd/etcd.go:29	Use default etcd connection: http://192.168.1.227:2379
+[flying]2021/08/17 - 15:31:17.099	[31merror[0m	/Users/zhangchengji/GoProjects/flyingv2/coremain/run.go:33	accept tcp [::]:8080: use of closed network connection
+[flying]2021/08/17 - 15:31:34.106	[33mwarn[0m	/Users/zhangchengji/GoProjects/flyingv2/core/etcd/etcd.go:30	Use default etcd connection: http://192.168.1.227:2379
+[flying]2021/08/17 - 15:31:41.239	[34minfo[0m	/Users/zhangchengji/GoProjects/flyingv2/core/gin/plugin/router.go:13	use middleware cors
+[flying]2021/08/17 - 15:31:41.239	[34minfo[0m	/Users/zhangchengji/GoProjects/flyingv2/core/gin/plugin/router.go:15	register swagger handler
+[flying]2021/08/17 - 15:31:41.239	[34minfo[0m	/Users/zhangchengji/GoProjects/flyingv2/core/gin/plugin/router.go:22	router register success
+[flying]2021/08/17 - 15:31:41.239	[34minfo[0m	/Users/zhangchengji/GoProjects/flyingv2/coremain/run.go:35	server run success on 	{"address": ":8080"}
+[flying]2021/08/17 - 15:36:05.113	[31merror[0m	/Users/zhangchengji/GoProjects/flyingv2/coremain/run.go:36	accept tcp [::]:8080: use of closed network connection
+[flying]2021/08/17 - 15:36:29.675	[33mwarn[0m	/Users/zhangchengji/GoProjects/flyingv2/core/etcd/etcd.go:30	Use default etcd connection: http://192.168.1.227:2379
+[flying]2021/08/17 - 15:36:29.686	[34minfo[0m	/Users/zhangchengji/GoProjects/flyingv2/core/gin/plugin/router.go:13	use middleware cors
+[flying]2021/08/17 - 15:36:29.686	[34minfo[0m	/Users/zhangchengji/GoProjects/flyingv2/core/gin/plugin/router.go:15	register swagger handler
+[flying]2021/08/17 - 15:36:29.687	[34minfo[0m	/Users/zhangchengji/GoProjects/flyingv2/core/gin/plugin/router.go:22	router register success
+[flying]2021/08/17 - 15:36:29.687	[34minfo[0m	/Users/zhangchengji/GoProjects/flyingv2/coremain/run.go:35	server run success on 	{"address": ":8080"}
+[flying]2021/08/17 - 16:34:39.852	[31merror[0m	/Users/zhangchengji/GoProjects/flyingv2/coremain/run.go:36	accept tcp [::]:8080: use of closed network connection
+[flying]2021/08/17 - 16:35:35.361	[33mwarn[0m	/Users/zhangchengji/GoProjects/flyingv2/core/etcd/etcd.go:30	Use default etcd connection: http://192.168.1.227:2379
+[flying]2021/08/17 - 16:35:35.374	[34minfo[0m	/Users/zhangchengji/GoProjects/flyingv2/core/gin/plugin/router.go:13	use middleware cors
+[flying]2021/08/17 - 16:35:35.374	[34minfo[0m	/Users/zhangchengji/GoProjects/flyingv2/core/gin/plugin/router.go:15	register swagger handler
+[flying]2021/08/17 - 16:35:35.374	[34minfo[0m	/Users/zhangchengji/GoProjects/flyingv2/core/gin/plugin/router.go:22	router register success
+[flying]2021/08/17 - 16:35:35.374	[34minfo[0m	/Users/zhangchengji/GoProjects/flyingv2/coremain/run.go:35	server run success on 	{"address": ":8080"}
+[flying]2021/08/17 - 16:36:49.473	[31merror[0m	/Users/zhangchengji/GoProjects/flyingv2/coremain/run.go:36	accept tcp [::]:8080: use of closed network connection
+[flying]2021/08/17 - 16:36:53.318	[33mwarn[0m	/Users/zhangchengji/GoProjects/flyingv2/core/etcd/etcd.go:30	Use default etcd connection: http://192.168.1.227:2379
+[flying]2021/08/17 - 16:36:53.331	[34minfo[0m	/Users/zhangchengji/GoProjects/flyingv2/core/gin/plugin/router.go:13	use middleware cors
+[flying]2021/08/17 - 16:36:53.331	[34minfo[0m	/Users/zhangchengji/GoProjects/flyingv2/core/gin/plugin/router.go:15	register swagger handler
+[flying]2021/08/17 - 16:36:53.331	[34minfo[0m	/Users/zhangchengji/GoProjects/flyingv2/core/gin/plugin/router.go:22	router register success
+[flying]2021/08/17 - 16:36:53.331	[34minfo[0m	/Users/zhangchengji/GoProjects/flyingv2/coremain/run.go:35	server run success on 	{"address": ":8080"}
+[flying]2021/08/17 - 16:37:09.079	[31merror[0m	/Users/zhangchengji/GoProjects/flyingv2/coremain/run.go:36	accept tcp [::]:8080: use of closed network connection
+[flying]2021/08/17 - 16:37:11.271	[33mwarn[0m	/Users/zhangchengji/GoProjects/flyingv2/core/etcd/etcd.go:30	Use default etcd connection: http://192.168.1.227:2379
+[flying]2021/08/17 - 16:37:11.300	[34minfo[0m	/Users/zhangchengji/GoProjects/flyingv2/core/gin/plugin/router.go:13	use middleware cors
+[flying]2021/08/17 - 16:37:11.300	[34minfo[0m	/Users/zhangchengji/GoProjects/flyingv2/core/gin/plugin/router.go:15	register swagger handler
+[flying]2021/08/17 - 16:37:11.300	[34minfo[0m	/Users/zhangchengji/GoProjects/flyingv2/core/gin/plugin/router.go:22	router register success
+[flying]2021/08/17 - 16:37:11.300	[34minfo[0m	/Users/zhangchengji/GoProjects/flyingv2/coremain/run.go:35	server run success on 	{"address": ":8080"}
+[flying]2021/08/17 - 16:37:23.108	[31merror[0m	/Users/zhangchengji/GoProjects/flyingv2/coremain/run.go:36	accept tcp [::]:8080: use of closed network connection
+[flying]2021/08/17 - 16:37:25.697	[33mwarn[0m	/Users/zhangchengji/GoProjects/flyingv2/core/etcd/etcd.go:30	Use default etcd connection: http://192.168.1.227:2379
+[flying]2021/08/17 - 16:37:25.707	[34minfo[0m	/Users/zhangchengji/GoProjects/flyingv2/core/gin/plugin/router.go:13	use middleware cors
+[flying]2021/08/17 - 16:37:25.707	[34minfo[0m	/Users/zhangchengji/GoProjects/flyingv2/core/gin/plugin/router.go:15	register swagger handler
+[flying]2021/08/17 - 16:37:25.707	[34minfo[0m	/Users/zhangchengji/GoProjects/flyingv2/core/gin/plugin/router.go:22	router register success
+[flying]2021/08/17 - 16:37:25.707	[34minfo[0m	/Users/zhangchengji/GoProjects/flyingv2/coremain/run.go:35	server run success on 	{"address": ":8080"}
+[flying]2021/08/17 - 16:37:39.434	[31merror[0m	/Users/zhangchengji/GoProjects/flyingv2/coremain/run.go:36	accept tcp [::]:8080: use of closed network connection
+[flying]2021/08/17 - 16:37:41.499	[33mwarn[0m	/Users/zhangchengji/GoProjects/flyingv2/core/etcd/etcd.go:30	Use default etcd connection: http://192.168.1.227:2379
+[flying]2021/08/17 - 16:37:41.512	[34minfo[0m	/Users/zhangchengji/GoProjects/flyingv2/core/gin/plugin/router.go:13	use middleware cors
+[flying]2021/08/17 - 16:37:41.512	[34minfo[0m	/Users/zhangchengji/GoProjects/flyingv2/core/gin/plugin/router.go:15	register swagger handler
+[flying]2021/08/17 - 16:37:41.512	[34minfo[0m	/Users/zhangchengji/GoProjects/flyingv2/core/gin/plugin/router.go:22	router register success
+[flying]2021/08/17 - 16:37:41.512	[34minfo[0m	/Users/zhangchengji/GoProjects/flyingv2/coremain/run.go:35	server run success on 	{"address": ":8080"}
+[flying]2021/08/17 - 16:37:48.894	[31merror[0m	/Users/zhangchengji/GoProjects/flyingv2/coremain/run.go:36	accept tcp [::]:8080: use of closed network connection
+[flying]2021/08/17 - 16:37:51.248	[33mwarn[0m	/Users/zhangchengji/GoProjects/flyingv2/core/etcd/etcd.go:30	Use default etcd connection: http://192.168.1.227:2379
+[flying]2021/08/17 - 16:37:51.261	[34minfo[0m	/Users/zhangchengji/GoProjects/flyingv2/core/gin/plugin/router.go:13	use middleware cors
+[flying]2021/08/17 - 16:37:51.261	[34minfo[0m	/Users/zhangchengji/GoProjects/flyingv2/core/gin/plugin/router.go:15	register swagger handler
+[flying]2021/08/17 - 16:37:51.261	[34minfo[0m	/Users/zhangchengji/GoProjects/flyingv2/core/gin/plugin/router.go:22	router register success
+[flying]2021/08/17 - 16:37:51.261	[34minfo[0m	/Users/zhangchengji/GoProjects/flyingv2/coremain/run.go:35	server run success on 	{"address": ":8080"}
+[flying]2021/08/17 - 16:38:11.653	[31merror[0m	/Users/zhangchengji/GoProjects/flyingv2/coremain/run.go:36	accept tcp [::]:8080: use of closed network connection
+[flying]2021/08/17 - 16:38:20.715	[33mwarn[0m	/Users/zhangchengji/GoProjects/flyingv2/core/etcd/etcd.go:30	Use default etcd connection: http://192.168.1.227:2379
+[flying]2021/08/17 - 16:38:20.726	[34minfo[0m	/Users/zhangchengji/GoProjects/flyingv2/core/gin/plugin/router.go:13	use middleware cors
+[flying]2021/08/17 - 16:38:20.726	[34minfo[0m	/Users/zhangchengji/GoProjects/flyingv2/core/gin/plugin/router.go:15	register swagger handler
+[flying]2021/08/17 - 16:38:20.726	[34minfo[0m	/Users/zhangchengji/GoProjects/flyingv2/core/gin/plugin/router.go:22	router register success
+[flying]2021/08/17 - 16:38:20.727	[34minfo[0m	/Users/zhangchengji/GoProjects/flyingv2/coremain/run.go:35	server run success on 	{"address": ":8080"}
+[flying]2021/08/17 - 16:38:52.013	[33mwarn[0m	/Users/zhangchengji/GoProjects/flyingv2/core/etcd/etcd.go:30	Use default etcd connection: http://192.168.1.227:2379
+[flying]2021/08/17 - 16:38:52.027	[34minfo[0m	/Users/zhangchengji/GoProjects/flyingv2/core/gin/plugin/router.go:13	use middleware cors
+[flying]2021/08/17 - 16:38:52.027	[34minfo[0m	/Users/zhangchengji/GoProjects/flyingv2/core/gin/plugin/router.go:15	register swagger handler
+[flying]2021/08/17 - 16:38:52.027	[34minfo[0m	/Users/zhangchengji/GoProjects/flyingv2/core/gin/plugin/router.go:22	router register success
+[flying]2021/08/17 - 16:38:52.027	[34minfo[0m	/Users/zhangchengji/GoProjects/flyingv2/coremain/run.go:35	server run success on 	{"address": ":8080"}
+[flying]2021/08/17 - 16:38:58.973	[31merror[0m	/Users/zhangchengji/GoProjects/flyingv2/coremain/run.go:36	accept tcp [::]:8080: use of closed network connection
+[flying]2021/08/17 - 16:39:07.670	[33mwarn[0m	/Users/zhangchengji/GoProjects/flyingv2/core/etcd/etcd.go:30	Use default etcd connection: http://192.168.1.227:2379
+[flying]2021/08/17 - 16:39:07.683	[34minfo[0m	/Users/zhangchengji/GoProjects/flyingv2/core/gin/plugin/router.go:13	use middleware cors
+[flying]2021/08/17 - 16:39:07.683	[34minfo[0m	/Users/zhangchengji/GoProjects/flyingv2/core/gin/plugin/router.go:15	register swagger handler
+[flying]2021/08/17 - 16:39:07.683	[34minfo[0m	/Users/zhangchengji/GoProjects/flyingv2/core/gin/plugin/router.go:22	router register success
+[flying]2021/08/17 - 16:39:07.683	[34minfo[0m	/Users/zhangchengji/GoProjects/flyingv2/coremain/run.go:35	server run success on 	{"address": ":8080"}
+[flying]2021/08/17 - 16:41:34.644	[33mwarn[0m	/Users/zhangchengji/GoProjects/flyingv2/core/etcd/etcd.go:30	Use default etcd connection: http://192.168.1.227:2379
+[flying]2021/08/17 - 16:41:34.654	[34minfo[0m	/Users/zhangchengji/GoProjects/flyingv2/core/gin/plugin/router.go:13	use middleware cors
+[flying]2021/08/17 - 16:41:34.654	[34minfo[0m	/Users/zhangchengji/GoProjects/flyingv2/core/gin/plugin/router.go:15	register swagger handler
+[flying]2021/08/17 - 16:41:34.655	[34minfo[0m	/Users/zhangchengji/GoProjects/flyingv2/core/gin/plugin/router.go:22	router register success
+[flying]2021/08/17 - 16:41:34.655	[34minfo[0m	/Users/zhangchengji/GoProjects/flyingv2/coremain/run.go:35	server run success on 	{"address": ":8080"}
+[flying]2021/08/17 - 16:42:06.900	[31merror[0m	/Users/zhangchengji/GoProjects/flyingv2/coremain/run.go:36	accept tcp [::]:8080: use of closed network connection
+[flying]2021/08/17 - 16:42:09.198	[33mwarn[0m	/Users/zhangchengji/GoProjects/flyingv2/core/etcd/etcd.go:30	Use default etcd connection: http://192.168.1.227:2379
+[flying]2021/08/17 - 16:42:09.210	[34minfo[0m	/Users/zhangchengji/GoProjects/flyingv2/core/gin/plugin/router.go:13	use middleware cors
+[flying]2021/08/17 - 16:42:09.210	[34minfo[0m	/Users/zhangchengji/GoProjects/flyingv2/core/gin/plugin/router.go:15	register swagger handler
+[flying]2021/08/17 - 16:42:09.210	[34minfo[0m	/Users/zhangchengji/GoProjects/flyingv2/core/gin/plugin/router.go:22	router register success
+[flying]2021/08/17 - 16:42:09.210	[34minfo[0m	/Users/zhangchengji/GoProjects/flyingv2/coremain/run.go:35	server run success on 	{"address": ":8080"}
+[flying]2021/08/17 - 16:42:51.461	[31merror[0m	/Users/zhangchengji/GoProjects/flyingv2/coremain/run.go:36	accept tcp [::]:8080: use of closed network connection
+[flying]2021/08/17 - 16:42:53.701	[33mwarn[0m	/Users/zhangchengji/GoProjects/flyingv2/core/etcd/etcd.go:30	Use default etcd connection: http://192.168.1.227:2379
+[flying]2021/08/17 - 16:42:53.712	[34minfo[0m	/Users/zhangchengji/GoProjects/flyingv2/core/gin/plugin/router.go:13	use middleware cors
+[flying]2021/08/17 - 16:42:53.712	[34minfo[0m	/Users/zhangchengji/GoProjects/flyingv2/core/gin/plugin/router.go:15	register swagger handler
+[flying]2021/08/17 - 16:42:53.712	[34minfo[0m	/Users/zhangchengji/GoProjects/flyingv2/core/gin/plugin/router.go:22	router register success
+[flying]2021/08/17 - 16:42:53.712	[34minfo[0m	/Users/zhangchengji/GoProjects/flyingv2/coremain/run.go:35	server run success on 	{"address": ":8080"}
+[flying]2021/08/17 - 16:53:10.432	[31merror[0m	/Users/zhangchengji/GoProjects/flyingv2/coremain/run.go:36	accept tcp [::]:8080: use of closed network connection
+[flying]2021/08/17 - 16:53:14.854	[33mwarn[0m	/Users/zhangchengji/GoProjects/flyingv2/core/etcd/etcd.go:30	Use default etcd connection: http://192.168.1.227:2379
+[flying]2021/08/17 - 16:53:34.855	[31merror[0m	/Users/zhangchengji/GoProjects/flyingv2/core/etcd/etcd.go:45	etcd create connection failed:	{"error": "context deadline exceeded"}
+[flying]2021/08/17 - 16:53:34.856	[34minfo[0m	/Users/zhangchengji/GoProjects/flyingv2/core/gin/plugin/router.go:13	use middleware cors
+[flying]2021/08/17 - 16:53:34.856	[34minfo[0m	/Users/zhangchengji/GoProjects/flyingv2/core/gin/plugin/router.go:15	register swagger handler
+[flying]2021/08/17 - 16:53:34.856	[34minfo[0m	/Users/zhangchengji/GoProjects/flyingv2/core/gin/plugin/router.go:22	router register success
+[flying]2021/08/17 - 16:53:34.856	[34minfo[0m	/Users/zhangchengji/GoProjects/flyingv2/coremain/run.go:35	server run success on 	{"address": ":8080"}
+[flying]2021/08/17 - 16:53:35.108	[31merror[0m	/Users/zhangchengji/GoProjects/flyingv2/coremain/run.go:36	accept tcp [::]:8080: use of closed network connection
+[flying]2021/08/17 - 16:53:38.987	[33mwarn[0m	/Users/zhangchengji/GoProjects/flyingv2/core/etcd/etcd.go:30	Use default etcd connection: http://192.168.1.227:2379
+[flying]2021/08/17 - 16:53:46.065	[34minfo[0m	/Users/zhangchengji/GoProjects/flyingv2/core/gin/plugin/router.go:13	use middleware cors
+[flying]2021/08/17 - 16:53:46.065	[34minfo[0m	/Users/zhangchengji/GoProjects/flyingv2/core/gin/plugin/router.go:15	register swagger handler
+[flying]2021/08/17 - 16:53:46.066	[34minfo[0m	/Users/zhangchengji/GoProjects/flyingv2/core/gin/plugin/router.go:22	router register success
+[flying]2021/08/17 - 16:53:46.066	[34minfo[0m	/Users/zhangchengji/GoProjects/flyingv2/coremain/run.go:35	server run success on 	{"address": ":8080"}
