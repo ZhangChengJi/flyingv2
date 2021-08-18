@@ -41,7 +41,7 @@ func NewEtcdClient() (*clientv3.Client, error) {
 	}
 	e, err := clientv3.New(cfg)
 	if err != nil {
-		logs.L.Error("etcd create connection failed:", zap.Error(err))
+		logs.L.Fatal("etcd create connection failed:", zap.Error(err))
 	}
 	return e, err
 }

@@ -1,7 +1,7 @@
 package router
 
-type Aest struct {
-	DD
+type RouterGroup struct {
+	AppRouter
 }
 
-var XC = new(Aest)
+var RouterGroupApp = new(RouterGroup)

@@ -5,15 +5,15 @@ import (
 	"flyingv2/core/etcd"
 )
 
-func Create() (core.Interface, error) {
-	return newETCD3Storage()
+func Create(prefix string) core.Interface {
+	return newETCD3Storage(prefix)
 }
 
 //初始化了etcd
-func newETCD3Storage() (core.Interface, error) {
+func newETCD3Storage(prefix string) core.Interface {
 	client, err := etcd.NewEtcdClient()
 	if err != nil {
-		return nil, err
+		return nil
 	}
-	return etcd.New(client, "/"), nil
+	return etcd.New(client, prefix)
 }

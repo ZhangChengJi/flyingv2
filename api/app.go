@@ -1,6 +1,12 @@
 package api
 
-type App struct {
+import (
+	"flyingv2/core/app"
+	"github.com/gin-gonic/gin"
+)
+
+type AppApi struct {
+	app.App
 }
 
 /**
@@ -13,7 +19,12 @@ type App struct {
 /registry/group/app/dev {[]}
 
 */
+//var a=app.App{factory.Create(constant.AppPrefix)}
 
-func (app *App) GetList() {
+func (app *AppApi) Set(*gin.Context) {
+	app.App.Set()
+}
 
+func (app *AppApi) List(*gin.Context) {
+	app.App.List()
 }

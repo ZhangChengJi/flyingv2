@@ -1,8 +1,6 @@
 package coremain
 
 import (
-	"flyingv2/core/etcd"
-	"flyingv2/core/factory"
 	plugin "flyingv2/core/gin/plugin"
 	"flyingv2/logs"
 	"fmt"
@@ -13,12 +11,11 @@ import (
 )
 
 func init() {
-	logs.NewLog()
-	etcd.Storage, _ = factory.Create()
 
 }
 
 func Run() {
+	logs.NewLog()
 	// start endpoints server
 	server()
 }
