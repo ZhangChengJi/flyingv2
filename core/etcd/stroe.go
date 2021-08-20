@@ -76,44 +76,39 @@ func (s *Store) Get(ctx context.Context, key string) ([]byte, error) {
 	return r.Kvs[0].Value, nil
 }
 
-func (s *Store) List(ctx context.Context, key string) ([][]byte, error) {
+func (s *Store) List(ctx context.Context, key string, opts *core.ListOptions, list *core.PageList) error {
 
-	//if !strings.HasSuffix(key, "/") {
-	//	key += "/"
-	//}
 	options := make([]clientv3.OpOption, 0, 4)
-	options = append(options, clientv3.WithLimit(5))
-	if key == "" {
-		options = append(options, clientv3.WithPrefix())
-	} else {
-		options = append(options, clientv3.WithFromKey())
-	}
-	key = path.Join(s.Prefix, key)
-	//keyPrefix := key
-	rangeEnd := clientv3.GetPrefixRangeEnd(keyPrefix)
-	options = append(options, clientv3.WithRange(rangeEnd))
+	options = append(options, clientv3.WithLimit(opts.PageInfo.PageSize))
 	options = append(options, clientv3.WithSort(clientv3.SortByKey, clientv3.SortAscend))
-
-	//options = append(options, clientv3.WithPrefix())
-	var lastKey []byte
-	for {
-		getResp := new(clientv3.GetResponse)
-		//key = key + "\x00"
-		getResp, _ = s.Client.Get(ctx, key, options...)
-
-		for _, kv := range getResp.Kvs {
-			fmt.Println(kv)
-			lastKey = kv.Key
-		}
-		key = string(lastKey) + "\x00"
-		break
+	if key != "" { //特殊指定key查询
+		key = path.Join(s.Prefix, key)
+		options = append(options, clientv3.WithPrefix())
+	} else { //范围查询,使用默认前缀
+		key = s.Prefix
 	}
 
-	//get, err := e.Client.Get(ctx, path, clientv3.WithPrefix())
-	//if err != nil {
-	//	return nil, err
-	//}
-	//fmt.Println(get)
-	return [][]byte{}, nil
+	//TODO: 坑
+	options = append(options, clientv3.WithRange(clientv3.GetPrefixRangeEnd(key)))
+	var i int64
+	var total int64
+
+	for {
+		resp, _ := s.Client.Get(ctx, key, options...)
+		i++
+		if i == 1 {
+			total = resp.Count
+		}
+		if len(resp.Kvs) == 0 {
+			break
+		}
+		if i >= opts.Page || !resp.More {
+			list.Unmarshal(total, resp)
+			break
+		}
+		key = string(resp.Kvs[len(resp.Kvs)-1].Key) + "\x00"
+	}
+
+	return nil
 
 }
