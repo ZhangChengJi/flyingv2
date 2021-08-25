@@ -43,7 +43,7 @@ func (s *Store) Set(ctx context.Context, key string, value string) error {
 	fmt.Println(aas)
 	return nil
 }
-func (s *Store) Get(ctx context.Context, key string) ([]byte, error) {
+func (s *Store) Get(ctx context.Context, key string) (interface{}, error) {
 	ctx, cancel := context.WithTimeout(ctx, etcdTimeout)
 	defer cancel()
 	//if recursive {
@@ -73,12 +73,13 @@ func (s *Store) Get(ctx context.Context, key string) ([]byte, error) {
 		return []byte{}, errKeyNotFound
 	}
 
-	return r.Kvs[0].Value, nil
+	return string(r.Kvs[0].Value), nil
 }
 
-func (s *Store) List(ctx context.Context, key string, opts *core.ListOptions, list *core.PageList) error {
+func (s *Store) List(ctx context.Context, opts *core.ListOptions) (list *core.PageList, err error) {
 
 	options := make([]clientv3.OpOption, 0, 4)
+	key := opts.Key
 	options = append(options, clientv3.WithLimit(opts.PageInfo.PageSize))
 	options = append(options, clientv3.WithSort(clientv3.SortByKey, clientv3.SortAscend))
 	if key != "" { //特殊指定key查询

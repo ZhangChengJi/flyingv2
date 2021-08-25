@@ -1,6 +1,7 @@
 package api
 
 import (
+	"context"
 	"flyingv2/core"
 	"flyingv2/core/app"
 	"flyingv2/core/resp"
@@ -10,7 +11,7 @@ import (
 )
 
 type AppApi struct {
-	app.App
+	Store core.Interface
 }
 
 /**
@@ -29,16 +30,22 @@ func (app *AppApi) Set(c *gin.Context) {
 	//c.ShouldBindJSON()
 	app.App.Set()
 }
+func (app *AppApi) Get(c *gin.Context) {
+	key, _ := c.Get("key")
+	s := key.(string)
+	if val, err := app.Store.Get(context.Background(), s); err != nil {
+		return
+	}
+}
 
 func (app *AppApi) List(c *gin.Context) {
 	var query core.PageInfo
 	_ = c.ShouldBind(&query)
-	app.App.PageInfo = query
-	if err := app.App.List(); err != nil {
+	if list, err := app.Store.List(context.Background(), &core.ListOptions{PageInfo: query}); err != nil {
 		logs.L.Error("get list", zap.Error(err))
 		resp.FailWithMessage("get list failed", c)
 	} else {
-		resp.OkWithData(app.App.PageList, c)
+		resp.OkWithData(list, c)
 	}
 
 }

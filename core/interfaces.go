@@ -2,14 +2,13 @@ package core
 
 import (
 	"context"
-	"fmt"
 	clientv3 "go.etcd.io/etcd/client/v3"
 )
 
 type Interface interface {
 	Set(ctx context.Context, key string, value string) error
-	Get(ctx context.Context, key string) ([]byte, error)
-	List(ctx context.Context, key string, ops *ListOptions, list *PageList) error
+	Get(ctx context.Context, key string) (interface{}, error)
+	List(ctx context.Context, ops *ListOptions) (*PageList, error)
 }
 
 type ListOptions struct {
@@ -35,12 +34,17 @@ type PageList struct {
 	List interface{} `json:"list"`
 	Page
 }
+type Result struct {
+	Result interface{} `json:"result"`
+}
+type EtcdResult struct {
+}
 
 func (p *PageList) Unmarshal(total int64, response *clientv3.GetResponse) {
 	if len(response.Kvs) > 0 {
 		list := make([]interface{}, 0)
 		for _, kv := range response.Kvs {
-			list = append(list, fmt.Sprintf("%v------%v", string(kv.Key), string(kv.Value)))
+			list = append(list, string(kv.Value))
 		}
 		p.List = &list
 		p.Total = total
