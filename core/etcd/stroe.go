@@ -10,8 +10,6 @@ import (
 	"time"
 )
 
-var AA *Store
-
 type Store struct {
 	Client *clientv3.Client
 	Prefix string
@@ -44,8 +42,6 @@ func (s *Store) Set(ctx context.Context, key string, value string) error {
 	return nil
 }
 func (s *Store) Get(ctx context.Context, key string) (interface{}, error) {
-	ctx, cancel := context.WithTimeout(ctx, etcdTimeout)
-	defer cancel()
 	//if recursive {
 	key = path.Join(s.Prefix, key)
 	//	r, err := e.Client.Get(ctx, path, clientv3.WithPrefix())
@@ -110,6 +106,6 @@ func (s *Store) List(ctx context.Context, opts *core.ListOptions) (list *core.Pa
 		key = string(resp.Kvs[len(resp.Kvs)-1].Key) + "\x00"
 	}
 
-	return nil
+	return list, err
 
 }

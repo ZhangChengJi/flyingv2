@@ -3,7 +3,6 @@ package api
 import (
 	"context"
 	"flyingv2/core"
-	"flyingv2/core/app"
 	"flyingv2/core/resp"
 	"flyingv2/logs"
 	"github.com/gin-gonic/gin"
@@ -28,14 +27,18 @@ type AppApi struct {
 
 func (app *AppApi) Set(c *gin.Context) {
 	//c.ShouldBindJSON()
-	app.App.Set()
+
 }
 func (app *AppApi) Get(c *gin.Context) {
 	key, _ := c.Get("key")
 	s := key.(string)
 	if val, err := app.Store.Get(context.Background(), s); err != nil {
-		return
+		logs.L.Error("get value", zap.Error(err))
+		resp.FailWithMessage("get value failed", c)
+	} else {
+		resp.OkWithData(val, c)
 	}
+
 }
 
 func (app *AppApi) List(c *gin.Context) {
