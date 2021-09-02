@@ -1,7 +1,5 @@
 .idea/
-/flying-ui/node_modules
-/flying-ui/dist
-/flying-client/target
+
 log
 .DS_Store
 
@@ -10,9 +8,7 @@ log
 .env.*.local
 
 # Log files
-npm-debug.log*
-yarn-debug.log*
-yarn-error.log*
+latest.log
 
 # Editor directories and files
 .idea
@@ -24,10 +20,9 @@ yarn-error.log*
 *.sw?
 
 go.sum
-/flying-admin/log/
-/server/gva
+
 latest_log
-latest_log
+
 
 *.iml
 
