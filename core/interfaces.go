@@ -26,10 +26,15 @@ type Page struct {
 	Page     int64 `json:"page"`
 	PageSize int64 `json:"pageSize"`
 }
+
 type App struct {
-	Name  string
-	AppId string
+	Name    string   `json:"name" form:"name"`       //name
+	AppId   string   `json:"appId" form:"appId"`     //appId
+	GroupId []string `json:"groupId" form:"groupId"` //groupId
 }
+type Group struct {
+}
+
 type PageList struct {
 	List interface{} `json:"list"`
 	Page

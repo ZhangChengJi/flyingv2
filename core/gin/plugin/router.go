@@ -2,8 +2,11 @@ package plugin
 
 import (
 	"flyingv2/core/gin/router"
+	_ "flyingv2/docs"
 	"flyingv2/logs"
 	"github.com/gin-gonic/gin"
+	ginSwagger "github.com/swaggo/gin-swagger"
+	"github.com/swaggo/gin-swagger/swaggerFiles"
 )
 
 func Routers() *gin.Engine {
@@ -11,7 +14,7 @@ func Routers() *gin.Engine {
 	// 跨域
 	//Router.Use(middleware.Cors()) // 如需跨域可以打开
 	logs.L.Info("use middleware cors")
-	//Router.GET("/swagger/*any", ginSwagger.WrapHandler(swaggerFiles.Handler))
+	Router.GET("/swagger/*any", ginSwagger.WrapHandler(swaggerFiles.Handler))
 	logs.L.Info("register swagger handler")
 	var d = router.RouterGroupApp.AppRouter
 	public := Router.Group("")

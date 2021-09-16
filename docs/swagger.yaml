@@ -1,0 +1,68 @@
+basePath: /
+definitions:
+  resp.Resp:
+    properties:
+      code:
+        type: integer
+      data:
+        type: object
+      msg:
+        type: string
+    type: object
+host: 127.0.0.1:8080
+info:
+  contact: {}
+  description: etcd 版分布式配置中心
+  license:
+    name: Apache 2.0
+    url: http://www.apache.org/licenses/LICENSE-2.0.html
+  title: flyingv2
+  version: "2.0"
+paths:
+  /app/get:
+    get:
+      consumes:
+      - multipart/form-data
+      description: 根据key进行获取app
+      parameters:
+      - description: Key
+        in: query
+        name: key
+        required: true
+        type: string
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/resp.Resp'
+      summary: 获取app
+      tags:
+      - app
+  /app/set:
+    post:
+      consumes:
+      - multipart/form-data
+      description: 进行app存储
+      parameters:
+      - description: appId
+        in: query
+        name: appId
+        type: string
+      - description: groupId
+        in: query
+        items:
+          type: string
+        name: groupId
+        type: array
+      - description: name
+        in: query
+        name: name
+        type: string
+      produces:
+      - application/json
+      summary: setapp
+      tags:
+      - app
+swagger: "2.0"

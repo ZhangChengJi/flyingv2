@@ -12,11 +12,13 @@ type AppRouter struct {
 
 func (AppR *AppRouter) InitRouter(Router *gin.RouterGroup) {
 	app := new(api.AppApi)
-	app.Api = factory.Create(constant.AppPrefix)
+	app.Store = factory.Create(constant.AppPrefix)
 	//app2.App{factory.Create(constant.AppPrefix)}}
+	appRouter := Router.Group("app")
 	{
-		Router.GET("set", app.Set)
-		Router.GET("list", app.List)
+		appRouter.POST("set", app.Set)
+		appRouter.GET("get", app.Get)
+		appRouter.GET("list", app.List)
 	}
 
 }

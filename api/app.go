@@ -2,6 +2,7 @@ package api
 
 import (
 	"context"
+	"encoding/json"
 	"flyingv2/core"
 	"flyingv2/core/resp"
 	"flyingv2/logs"
@@ -13,26 +14,36 @@ type AppApi struct {
 	Store core.Interface
 }
 
-/**
- /registry/app/user-server {appId:user-server,name: 用户服务,group: [dev,test,pro]}
-/registry/app/user-server
-/registry/app/user-server
-
-/registry/group/dev  {name: dev,txt:"测试库"}
-
-/registry/group/app/dev {[]}
-
-*/
-//var a=app.App{factory.Create(constant.AppPrefix)}
-
+// @Summary setapp
+// @Description 进行app存储
+// @Tags app
+// @Accept mpfd
+// @Produce json
+// @Param object query core.App false "App"
+// @Router /app/set [post]
 func (app *AppApi) Set(c *gin.Context) {
-	//c.ShouldBindJSON()
-
+	var ap core.App
+	err := c.ShouldBind(&ap)
+	if err != nil {
+		logs.L.Error("Parameter binding error", zap.Error(err))
+		return
+	}
+	sj, _ := json.Marshal(ap)
+	app.Store.Set(context.Background(), ap.AppId, string(sj))
 }
+
+// @Summary 获取app
+// @Description 根据key进行获取app
+// @Tags app
+// @Accept mpfd
+// @Produce json
+// @Param key query string true "Key"
+//@Success 200 {object} resp.Resp
+// @Router /app/get [get]
 func (app *AppApi) Get(c *gin.Context) {
-	key, _ := c.Get("key")
-	s := key.(string)
-	if val, err := app.Store.Get(context.Background(), s); err != nil {
+	key := c.Query("key")
+	//s := key.(string)
+	if val, err := app.Store.Get(context.Background(), key); err != nil {
 		logs.L.Error("get value", zap.Error(err))
 		resp.FailWithMessage("get value failed", c)
 	} else {
