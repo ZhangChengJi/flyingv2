@@ -1,0 +1,50 @@
+package model
+
+import clientv3 "go.etcd.io/etcd/client/v3"
+
+type ListOptions struct {
+	PageInfo
+}
+
+type PageInfo struct {
+	Page     int64  `json:"page" form:"page"`
+	PageSize int64  `json:"pageSize" form:"pageSize"`
+	Key      string `json:"key" form:"key"`
+}
+
+type Page struct {
+	Total    int64 `json:"total"`
+	Page     int64 `json:"page"`
+	PageSize int64 `json:"pageSize"`
+}
+
+type App struct {
+	Name    string   `json:"name" form:"name"`       //name
+	AppId   string   `json:"appId" form:"appId"`     //appId
+	GroupId []string `json:"groupId" form:"groupId"` //groupId
+}
+type Group struct {
+}
+
+type PageList struct {
+	List interface{} `json:"list"`
+	Page
+}
+type Result struct {
+	Result interface{} `json:"result"`
+}
+
+func (p *PageList) Unmarshal(total int64, response *clientv3.GetResponse) {
+	if len(response.Kvs) > 0 {
+		list := make([]interface{}, 0)
+		for _, kv := range response.Kvs {
+			list = append(list, string(kv.Value))
+		}
+		p.List = &list
+		p.Total = total
+		//p.PageSize
+
+	}
+	//response.Kvs
+	//json.Unmarshal()
+}

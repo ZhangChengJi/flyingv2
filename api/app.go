@@ -4,6 +4,7 @@ import (
 	"context"
 	"encoding/json"
 	"flyingv2/internal/core"
+	"flyingv2/internal/core/model"
 	"flyingv2/internal/core/resp"
 	"flyingv2/logs"
 	"github.com/gin-gonic/gin"
@@ -22,14 +23,19 @@ type AppApi struct {
 // @Param object query core.App false "App"
 // @Router /app/set [post]
 func (app *AppApi) Set(c *gin.Context) {
-	var ap core.App
+	var ap model.App
 	err := c.ShouldBind(&ap)
 	if err != nil {
 		logs.L.Error("Parameter binding error", zap.Error(err))
 		return
 	}
 	sj, _ := json.Marshal(ap)
-	app.Store.Set(context.Background(), ap.AppId, string(sj))
+	if err := app.Store.Set(context.Background(), ap.AppId, string(sj)); err != nil {
+		logs.L.Error("set app ", zap.Error(err))
+		resp.FailWithMessage("set app failed", c)
+	} else {
+		resp.Ok(c)
+	}
 }
 
 // @Summary 获取app
@@ -42,10 +48,9 @@ func (app *AppApi) Set(c *gin.Context) {
 // @Router /app/get [get]
 func (app *AppApi) Get(c *gin.Context) {
 	key := c.Query("key")
-	//s := key.(string)
 	if val, err := app.Store.Get(context.Background(), key); err != nil {
-		logs.L.Error("get value", zap.Error(err))
-		resp.FailWithMessage("get value failed", c)
+		logs.L.Error("get app key(%s)", zap.String("", key), zap.Error(err))
+		resp.FailWithMessage("get app failed", c)
 	} else {
 		resp.OkWithData(val, c)
 	}
@@ -53,11 +58,11 @@ func (app *AppApi) Get(c *gin.Context) {
 }
 
 func (app *AppApi) List(c *gin.Context) {
-	var query core.PageInfo
+	var query model.PageInfo
 	_ = c.ShouldBind(&query)
-	if list, err := app.Store.List(context.Background(), &core.ListOptions{PageInfo: query}); err != nil {
-		logs.L.Error("get list", zap.Error(err))
-		resp.FailWithMessage("get list failed", c)
+	if list, err := app.Store.List(context.Background(), &model.ListOptions{PageInfo: query}); err != nil {
+		logs.L.Error("get app list", zap.Error(err))
+		resp.FailWithMessage("get app list failed", c)
 	} else {
 		resp.OkWithData(list, c)
 	}
