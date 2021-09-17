@@ -1,6 +1,6 @@
 package main
 
-import "flyingv2/coremain"
+import "flyingv2/cmd"
 
 // @title flyingv2
 // @version 2.0
@@ -12,5 +12,6 @@ import "flyingv2/coremain"
 // @host 127.0.0.1:8080
 // @BasePath /
 func main() {
-	coremain.Run()
+	cmd.Execute()
+
 }

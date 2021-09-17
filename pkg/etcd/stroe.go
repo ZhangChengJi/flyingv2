@@ -3,7 +3,7 @@ package etcd
 import (
 	"context"
 	"errors"
-	"flyingv2/core"
+	"flyingv2/internal/core"
 	"fmt"
 	clientv3 "go.etcd.io/etcd/client/v3"
 	"path"
@@ -21,9 +21,10 @@ const (
 	etcdTimeout = 5 * time.Second
 )
 
-func New(client *clientv3.Client, prefix string) core.Interface {
-	return newStorage(client, prefix)
+func New(prefix string) core.Interface {
+	return newStorage(Client, prefix)
 }
+
 func newStorage(client *clientv3.Client, prefix string) *Store {
 	return &Store{
 		Client: client,

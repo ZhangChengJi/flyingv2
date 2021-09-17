@@ -1,4 +1,4 @@
-package constant
+package conf
 
 const (
 	Prefix       = "/registry/"
@@ -6,3 +6,5 @@ const (
 	GroupPrefix  = Prefix + "group/"
 	ConfigPrefix = Prefix + "config/"
 )
+
+var Endpoints string

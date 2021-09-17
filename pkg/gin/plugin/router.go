@@ -1,9 +1,9 @@
 package plugin
 
 import (
-	"flyingv2/core/gin/router"
 	_ "flyingv2/docs"
 	"flyingv2/logs"
+	"flyingv2/pkg/gin/router"
 	"github.com/gin-gonic/gin"
 	ginSwagger "github.com/swaggo/gin-swagger"
 	"github.com/swaggo/gin-swagger/swaggerFiles"

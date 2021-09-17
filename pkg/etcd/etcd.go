@@ -9,7 +9,7 @@ import (
 )
 
 const (
-	defaultEndpoints = "http://192.168.0.104:2379"
+	defaultEndpoints = "http://localhost:2379"
 	// The short keepalive timeout and interval have been chosen to aggressively
 	// detect a failed etcd server without introducing much overhead.
 	keepaliveTime    = 30 * time.Second
@@ -21,11 +21,15 @@ const (
 	dialTimeout = 20 * time.Second
 )
 
-func NewEtcdClient() (*clientv3.Client, error) {
-	var endpoints string
+var (
+	Client *clientv3.Client
+)
+
+func NewEtcdClient(endpoints string) (err error) {
+	//var endpoints string
 	//flag.StringVar(&endpoints, "ETCD_ENDPOINT", "", "etcd 连接")
 	//flag.Parse()
-	if endpoints == "" {
+	if len(endpoints) <= 0 {
 		logs.L.Warn("Use default etcd connection: " + defaultEndpoints)
 		endpoints = defaultEndpoints
 	}
@@ -39,9 +43,9 @@ func NewEtcdClient() (*clientv3.Client, error) {
 			grpc.WithBlock(), // block until the underlying connection is up
 		},
 	}
-	e, err := clientv3.New(cfg)
+	Client, err = clientv3.New(cfg)
 	if err != nil {
-		logs.L.Fatal("etcd create connection failed:", zap.Error(err))
+		logs.L.Error("etcd create connection failed:", zap.Error(err))
 	}
-	return e, err
+	return err
 }

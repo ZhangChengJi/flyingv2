@@ -3,8 +3,8 @@ package api
 import (
 	"context"
 	"encoding/json"
-	"flyingv2/core"
-	"flyingv2/core/resp"
+	"flyingv2/internal/core"
+	"flyingv2/internal/core/resp"
 	"flyingv2/logs"
 	"github.com/gin-gonic/gin"
 	"go.uber.org/zap"
