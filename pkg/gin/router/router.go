@@ -19,6 +19,8 @@ func Routers() *gin.Engine {
 	logs.L.Info("use middleware cors")
 	Router.GET("/swagger/*any", ginSwagger.WrapHandler(swaggerFiles.Handler))
 	logs.L.Info("register swagger handler")
+	b := &PublicGroup{Router.Group("")}
+	b.Register()
 	p := &PrivateGroup{Router.Group("")}
 	p.Register()
 	logs.L.Info("router register success")

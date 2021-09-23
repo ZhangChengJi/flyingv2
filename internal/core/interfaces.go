@@ -8,7 +8,7 @@ import (
 
 type Interface interface {
 	Set(ctx context.Context, key string, value string) error
-	Get(ctx context.Context, key string) (interface{}, error)
+	Get(ctx context.Context, key string) (string, error)
 	List(ctx context.Context, ops *model.ListOptions) (*model.PageList, error)
 	Update(ctx context.Context, key string, value string) error
 }

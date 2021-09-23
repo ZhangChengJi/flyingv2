@@ -14,9 +14,9 @@ type Login struct {
 	*User
 }
 type User struct {
-	Username string `json:"username"` // 用户名
-	Password string `json:"password"` // 密码
-	salt     int64
+	Username string `json:"username" form:"username"` // 用户名
+	Password string `json:"password" form:"password"` // 密码
+	Salt     int64  `json:"salt" form:"salt"`
 }
 type LoginResponse struct {
 	*User
@@ -24,13 +24,17 @@ type LoginResponse struct {
 	ExpiresAt int64  `json:"expiresAt"`
 }
 
-func (l *Login) Verify(val interface{}) bool {
-	v := reflect.ValueOf(val).Elem()
+func (l *Login) Verify(val string) bool {
+
+	v := reflect.ValueOf(val)
+	tp := reflect.TypeOf(val)
 	t := v.Type()
 	var user = new(*User)
+	json.Unmarshal([]byte(val), &user)
 	u := reflect.ValueOf(user).Elem()
-	for i := 0; i < v.NumField(); i++ {
-		tv := u.FieldByName(t.Field(i).Name)
+	for i := 0; i < tp.NumField(); i++ {
+		name := t.Field(i).Name
+		tv := u.FieldByName(name)
 		if tv.IsValid() == false {
 			continue
 		}
@@ -39,7 +43,7 @@ func (l *Login) Verify(val interface{}) bool {
 	if user != nil {
 		h := md5.New()
 		h.Write([]byte(l.Password))
-		h.Write([]byte(strconv.FormatInt(l.salt, 10)))
+		h.Write([]byte(strconv.FormatInt(l.Salt, 10)))
 		newPass := hex.EncodeToString(h.Sum(nil))
 		return reflect.DeepEqual(newPass, val)
 
@@ -71,12 +75,13 @@ type App struct {
 
 func MarshalJSON(a interface{}) ([]byte, error) {
 	var maps = make(map[string]interface{})
-	v := reflect.ValueOf(a).Elem()
+	v := reflect.ValueOf(a)
 	st := v.Type()
 	for i := 0; i < v.NumField(); i++ {
 		key := strings.Split(st.Field(i).Tag.Get("json"), ",")[0]
 		maps[key] = v.Field(i).Interface()
 	}
+
 	return json.Marshal(maps)
 }
 

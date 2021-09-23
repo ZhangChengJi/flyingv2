@@ -24,6 +24,11 @@ const (
 	etcdTimeout = 5 * time.Second
 )
 
+var (
+	commitErr = errors.New("etcd txn commit failed")
+	already   = errors.New("%s: %s Already exists")
+)
+
 func New(prefix string) core.Interface {
 	return newStorage(Client, prefix)
 }
@@ -50,18 +55,18 @@ func (s *Store) Set(ctx context.Context, key string, value string) error {
 	txnResp, err := txn.Commit()
 	if err != nil {
 		fmt.Println(err)
-		return nil // 没有问题
+		return commitErr // 没有问题
 	}
 	// 判断是否抢到了锁
 	if !txnResp.Succeeded {
 		fmt.Println("锁被占用:", string(
 			txnResp.Responses[0].GetResponseRange().Kvs[0].Value))
-		return nil
+		return already
 	}
 
 	return nil
 }
-func (s *Store) Get(ctx context.Context, key string) (interface{}, error) {
+func (s *Store) Get(ctx context.Context, key string) (string, error) {
 	//if recursive {
 	key = path.Join(s.Prefix, key)
 	//	r, err := e.Client.Get(ctx, path, clientv3.WithPrefix())
@@ -83,10 +88,10 @@ func (s *Store) Get(ctx context.Context, key string) (interface{}, error) {
 
 	r, err := s.Client.Get(ctx, key)
 	if err != nil {
-		return []byte{}, err
+		return "", err
 	}
 	if r.Count == 0 {
-		return []byte{}, errKeyNotFound
+		return "", errKeyNotFound
 	}
 
 	return string(r.Kvs[0].Value), nil
