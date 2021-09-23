@@ -2,6 +2,7 @@ package router
 
 import (
 	"flyingv2/api/app"
+	"flyingv2/api/system"
 	_ "flyingv2/docs"
 	"flyingv2/internal/core"
 	"flyingv2/logs"
@@ -33,9 +34,17 @@ type PrivateGroup struct {
 }
 
 func (r *PrivateGroup) Register() {
-	r.Use(plugin.JwtAuth())
+	r.Use(plugin.JwtAuth()) //认证
 	list := []core.RouteRegister{
 		app.NewHandler(),
+	}
+	for _, register := range list {
+		register.Router(r.RouterGroup)
+	}
+}
+func (r *PublicGroup) Register() {
+	list := []core.RouteRegister{
+		system.NewHandler(),
 	}
 	for _, register := range list {
 		register.Router(r.RouterGroup)

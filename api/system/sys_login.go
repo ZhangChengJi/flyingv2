@@ -26,19 +26,22 @@ func NewHandler() core.RouteRegister {
 	}
 }
 func (h *Handler) Router(r *gin.RouterGroup) {
+	g := r.Group("sys")
+	g.POST("login", h.Login)
+	g.POST("register", h.Register)
 
 }
 
-func (s *Handler) Login(c *gin.Context) {
+func (h *Handler) Login(c *gin.Context) {
 	var login model.Login
 	_ = c.ShouldBind(login)
-	if value, err := s.Store.Get(context.Background(), login.Username); err != nil {
+	if value, err := h.Store.Get(context.Background(), login.Username); err != nil {
 		logs.L.Error("login error: ", zap.Error(err))
 		resp.FailWithMessage(fmt.Sprintf("login failed:%v", zap.Error(err)), c)
 	} else {
 		if value != nil {
 			if ok := login.Verify(value); ok {
-				s.loginNext(c, login.User)
+				h.loginNext(c, login.User)
 			} else {
 				logs.L.Error("username or password failed")
 				resp.FailWithMessage("username or password failed", c)
@@ -47,7 +50,7 @@ func (s *Handler) Login(c *gin.Context) {
 	}
 }
 
-func (s *Handler) loginNext(c *gin.Context, user *model.User) {
+func (h *Handler) loginNext(c *gin.Context, user *model.User) {
 	j := plugin.NewAuth()
 	claims := jwt.StandardClaims{
 		Subject:   user.Username,
@@ -70,11 +73,11 @@ func (s *Handler) loginNext(c *gin.Context, user *model.User) {
 
 }
 
-func (s *Handler) Register(c *gin.Context) {
+func (h *Handler) Register(c *gin.Context) {
 	var user *model.User
 	_ = c.ShouldBind(user)
 	u, _ := model.MarshalJSON(user)
-	if err := s.Store.Set(context.Background(), user.Username, string(u)); err != nil {
+	if err := h.Store.Set(context.Background(), user.Username, string(u)); err != nil {
 		logs.L.Error("Register failed", zap.Error(err))
 		resp.FailWithMessage("Register failed", c)
 	} else {
