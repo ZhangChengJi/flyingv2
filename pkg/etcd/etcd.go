@@ -9,7 +9,7 @@ import (
 )
 
 const (
-	defaultEndpoints = "http://localhost:2379"
+	defaultEndpoints = "http://192.168.1.246:2379"
 	// The short keepalive timeout and interval have been chosen to aggressively
 	// detect a failed etcd server without introducing much overhead.
 	keepaliveTime    = 30 * time.Second

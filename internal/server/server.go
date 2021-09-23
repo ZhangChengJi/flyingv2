@@ -5,7 +5,7 @@ import (
 	"flyingv2/conf"
 	"flyingv2/logs"
 	"flyingv2/pkg/etcd"
-	"flyingv2/pkg/gin/plugin"
+	"flyingv2/pkg/gin/router"
 	"fmt"
 	"go.uber.org/zap"
 	"net/http"
@@ -63,7 +63,7 @@ func (s *server) setupEtcdClient() error {
 }
 func (s *server) setupServer() {
 	address := fmt.Sprintf(":%d", systemAddress)
-	r := plugin.Routers()
+	r := router.Routers()
 	s.http = &http.Server{
 		Addr:           address,
 		Handler:        r,

@@ -62,7 +62,42 @@ paths:
         type: string
       produces:
       - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            type: string
       summary: setapp
+      tags:
+      - app
+  /app/update:
+    put:
+      consumes:
+      - multipart/form-data
+      description: 更新app
+      parameters:
+      - description: appId
+        in: query
+        name: appId
+        type: string
+      - description: groupId
+        in: query
+        items:
+          type: string
+        name: groupId
+        type: array
+      - description: name
+        in: query
+        name: name
+        type: string
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/resp.Resp'
+      summary: 更新app
       tags:
       - app
 swagger: "2.0"

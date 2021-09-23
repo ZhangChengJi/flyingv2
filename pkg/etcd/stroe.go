@@ -4,8 +4,11 @@ import (
 	"context"
 	"errors"
 	"flyingv2/internal/core"
+	"flyingv2/internal/core/model"
+	"flyingv2/logs"
 	"fmt"
-	clientv3 "go.etcd.io/etcd/client/v3"
+	"go.etcd.io/etcd/client/v3"
+	"go.uber.org/zap"
 	"path"
 	"time"
 )
@@ -35,11 +38,27 @@ func newStorage(client *clientv3.Client, prefix string) *Store {
 var errKeyNotFound = errors.New("key not found")
 
 func (s *Store) Set(ctx context.Context, key string, value string) error {
+
 	ctx, cancel := context.WithTimeout(ctx, etcdTimeout)
 	defer cancel()
 	key = path.Join(s.Prefix, key)
-	aas, _ := s.Client.Put(ctx, key, value, clientv3.WithPrevKV())
-	fmt.Println(aas)
+	kv := clientv3.NewKV(s.Client)
+	txn := kv.Txn(ctx)
+	txn.If(clientv3.Compare(clientv3.CreateRevision(key), "=", 0)).
+		Then(clientv3.OpPut(key, value, clientv3.WithPrevKV())).
+		Else(clientv3.OpGet(key))
+	txnResp, err := txn.Commit()
+	if err != nil {
+		fmt.Println(err)
+		return nil // 没有问题
+	}
+	// 判断是否抢到了锁
+	if !txnResp.Succeeded {
+		fmt.Println("锁被占用:", string(
+			txnResp.Responses[0].GetResponseRange().Kvs[0].Value))
+		return nil
+	}
+
 	return nil
 }
 func (s *Store) Get(ctx context.Context, key string) (interface{}, error) {
@@ -73,7 +92,7 @@ func (s *Store) Get(ctx context.Context, key string) (interface{}, error) {
 	return string(r.Kvs[0].Value), nil
 }
 
-func (s *Store) List(ctx context.Context, opts *core.ListOptions) (list *core.PageList, err error) {
+func (s *Store) List(ctx context.Context, opts *model.ListOptions) (list *model.PageList, err error) {
 
 	options := make([]clientv3.OpOption, 0, 4)
 	key := opts.Key
@@ -109,4 +128,13 @@ func (s *Store) List(ctx context.Context, opts *core.ListOptions) (list *core.Pa
 
 	return list, err
 
+}
+
+func (s *Store) Update(ctx context.Context, key string, value string) error {
+	_, err := s.Client.Put(ctx, key, value)
+	if err != nil {
+		logs.L.Info("etcd put failed: %s", zap.Error(err))
+		return fmt.Errorf("etcd put failed: %s", err)
+	}
+	return nil
 }
